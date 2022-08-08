@@ -8,14 +8,23 @@ The series structure is inspired by Jay Wengrow's book - A Common-Sense guide to
 - Chapter 1: Why DS are important?
 - Chapter 2: Why Algorithms are important?
 - Chapter 3, 4, 5: Big O and using it as a metric to optimize algorithms worst case runtime
+	- Bubble sort
+	- Selection sort
 - Chapter 6: Beyond optimizing for the worst case
-- Chapter 7: Hash Tables
-- Chapter 8: Stacks and Queues
-- Chapter 9, 10: Recursion
+	- Insertion sort
+- Chapter 7: Applications of Big O
+- Chapter 8: Hash Tables
+- Chapter 9: Stacks and Queues
+- Chapter 10, 11, 13: Recursion
 - Chapter 11: Node-based data structures
-- Chapter 12: Binary Trees
-- Chapter 13: Graphs
-- Chapter 14: Space Constraints
+- Chapter 12: Dynamic Programming
+- Chapter 14: Linked Lists
+- Chapter 15 Trees
+- Chapter 16: Heaps
+- Chapter 17: Tries
+- Chapter 18: Graph Algorithms
+- Chapter 19: Dealing with Space Constraints
+- Chapter 20: Techniques for Code Optimization
 
 To cover all the topics discussed in the books, we'll cover its table of content into chunks, each chunk will be presented in a series of videos.
 
@@ -54,3 +63,5 @@ The first series would cover the following components:
 	- [A Common-Sense guide to Data Structure and Algorithms](A common-sense guide to Data Structure and Algorithms)
 	- [Leet code](https://www.crackingthecodinginterview.com/)
 	- [Cracking the coding interview](https://www.crackingthecodinginterview.com/)
+
+[[index]]
