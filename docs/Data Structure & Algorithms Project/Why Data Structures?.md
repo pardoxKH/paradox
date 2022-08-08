@@ -89,8 +89,9 @@ Arrays are contiguous space in memory, where the computer associates the address
 As we've mentioned earlier, the importance of the choice of the data structure lies in the fact that it affects the efficiency of the four main operations. Before going through each of these operations with respect to the array data structure, here is a list of the operations and their efficiency.
 
 The cost of each operation on the array:
+
 |Operation|Best Case|Worst Case|
-|----------------|---------------|------------------|
+|---------|---------|----------|
 |[[Read-Arrays]]|1 step|1 step|
 |[[Search-Arrays]]|1 step|N steps|
 |[[Insert-Arrays]]|1 step|N+1 steps|
