@@ -84,32 +84,32 @@ If I asked you to guess a number that I have in my mind, it's between 1 and 100,
 
 This same logic applies to ordered arrays, we are looking for the value 10 for example in the ordered array:
 |5|10|15|20|25|30|35|40|45|50|55|60|
-|---|---|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|---|---|---|---|
 
 We start by comparing with the element in the middle of the array:
 |5|10|15|20|25|30|35|40|45|50|55|60|
-|---|---|---|---|---|---|---|---|---|---|---|
-||||||?||||
+|---|---|---|---|---|---|---|---|---|---|---|---|
+||||||?|||||||
 
 Is 10 higher or lower than 30, lower. Therefore, we eliminate the upper half of the array. And we don't need to look through it.
 |5|10|15|20|25|30|35|40|45|50|55|60|
-|---|---|---|---|---|---|---|---|---|---|---|
-||||||x|x|x|x|x|x|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+||||||x|x|x|x|x|x|x|
 
 we are left with the elements 5, 10, 15, 20, 25 to look through, so once again we start with comparing with the element in the middle of those elements:
 |5|10|15|20|25|30|35|40|45|50|55|60|
-|---|---|---|---|---|---|---|---|---|---|---|
-|||?|||x|x|x|x|x|x|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+|||?|||x|x|x|x|x|x|x|
 
 Is 10 lower or higher than 15, it's lower. So, we eliminate the upper part of the subarray:
 |5|10|15|20|25|30|35|40|45|50|55|60|
-|---|---|---|---|---|---|---|---|---|---|---|
-|||x|x|x|x|x|x|x|x|x|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+|||x|x|x|x|x|x|x|x|x|x|
 
 We do the same step again, comparing with the element in the middle of the subarray 5, 10. Since we have an even number of elements, we can choose arbitrarily either the element to the right or to the left of the middle, in our example, the index in the middle of 1, 2 is 0.5, then we can either take 0 or 1 to start comparing. If we take 0:
 |5|10|15|20|25|30|35|40|45|50|55|60|
-|---|---|---|---|---|---|---|---|---|---|---|
-|?||x|x|x|x|x|x|x|x|x|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+|?||x|x|x|x|x|x|x|x|x|x|
 
 Is 10 lower or higher than 5, higher. Then, we eliminate 5, and we are left with one element, 10. 10 = 10 ? Yes, which is the value we are looking for.
 
@@ -187,7 +187,7 @@ Then, we do the second comparison: 6>5?
 The third comparison would be with the 7:
 |4|5|7|9|
 |---|---|---|---|
-|||X|
+|||X||
 
 6 is less than 7, therefore, it would have to be inserted to the left of 7. 
 
