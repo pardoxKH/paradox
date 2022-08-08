@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.3.1, mkdocs-material-8.3.9" name="generator"/>
+<title>1 Why Data Structures? - obsidian-mkdocs template</title>
+<link href="../../assets/stylesheets/main.1d29e8d0.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#why-data-structures-matter">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="obsidian-mkdocs template" class="md-header__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              1 Why Data Structures?
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="pink" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="obsidian-mkdocs template" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    obsidian-mkdocs template
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Tariq Khasawneh
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+          Data Structure &amp; Algorithms Project
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Data Structure &amp; Algorithms Project" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Data Structure &amp; Algorithms Project
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../0-Data%20Structure%20and%20Algorithms%20Objectives/">
+        Data Structure &amp; Algorithms Series
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          1 Why Data Structures?
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        1 Why Data Structures?
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-data-structures-matter">
+    Why Data Structures Matter?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-are-data-structures">
+    What are Data Structures?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-structure-operations">
+    Data Structure Operations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#choosing-a-data-structure">
+    Choosing a Data Structure
+  </a>
+<nav aria-label="Choosing a Data Structure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#speed-as-a-performance-metric">
+    Speed as a performance metric
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-array-data-structure">
+    The Array Data Structure
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-array-operations">
+    The Array Operations
+  </a>
+<nav aria-label="The Array Operations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arrays-read-operation">
+    Arrays Read Operation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arrays-search">
+    Arrays Search
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arrays-insert">
+    Arrays Insert
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-set-data-structure">
+    The Set Data Structure
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2-Why%20Algorithms%3F/">
+        2 Why Algorithms?
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Big%20O%20Notation/">
+        3 Big O Notation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Bubble%20Sort/">
+        4 Bubble Sort
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-Selection%20Sort/">
+        5 Selection Sort
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-Insertion%20Sort/">
+        6 Insertion Sort
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Features" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/LaTeX%20Math%20Support/">
+        LaTeX Math Support
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Mermaid%20Diagrams/">
+        Mermaid diagrams
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-data-structures-matter">
+    Why Data Structures Matter?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-are-data-structures">
+    What are Data Structures?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-structure-operations">
+    Data Structure Operations
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#choosing-a-data-structure">
+    Choosing a Data Structure
+  </a>
+<nav aria-label="Choosing a Data Structure" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#speed-as-a-performance-metric">
+    Speed as a performance metric
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-array-data-structure">
+    The Array Data Structure
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-array-operations">
+    The Array Operations
+  </a>
+<nav aria-label="The Array Operations" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arrays-read-operation">
+    Arrays Read Operation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arrays-search">
+    Arrays Search
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arrays-insert">
+    Arrays Insert
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-set-data-structure">
+    The Set Data Structure
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>1 Why Data Structures?</h1>
+<p>Before delving into Big O notation, a technique used to analyze the efficiency of different algorithms, we need to study the building blocks that the algorithms we are analyzing operate on. Namely, Data Structures.</p>
+<h3 id="why-data-structures-matter">Why Data Structures Matter?<a class="headerlink" href="#why-data-structures-matter" title="Permanent link">¶</a></h3>
+<p>Data structures help us increase the quality of our code.
+How do we compare the quality of two snippets of code that achieve the same functionality? Do we say, that since both pieces of code achieve the same objective, they are therefore equivalent? This is clearly not the case, blocks of code differ in quality.</p>
+<p>The quality of the code depends on two main factors:
+    1. Maintainability: for the code to be easily maintainable, it should be easily understood by people who haven't written it. Therefore, it has to be organized, readable, and modular.
+    2. Efficiency: An efficient piece of code is one that runs faster, but also one that doesn't consume too many resources. i.e. it's code that attempts to strike a balance between its space and time requirements.</p>
+<p>To demonstrate how two pieces of code achieving the same functionality might differ in efficiency,
+let's create a function that simply prints the arguments passed to it.</p>
+<pre><code class="language-js">const printArgsV1(initial, final){
+    for(let i = initial; i&lt;=final; i++){
+        if((i==initial)||(i==final)){
+            console.log(i);
+        }
+
+    }
+}
+</code></pre>
+<pre><code class="language-js">const printArgsV2(initial, final){
+    console.log(initial);
+    console.log(final);
+}
+</code></pre>
+<p>If we compare the two versions of our function, clearly the second version is much more efficient, in the first version we are looping over all the numbers between initial and final, if initial = 0 and final = 1,000,000, we are essentially doing one million iteration, just to print the values of initial and final. In the second version, on the other hand, we print the two values without a single iteration.</p>
+<p>The first version is an inefficient piece of code, and a naive mistake that no programmer would typically make. However, there are more subtle and nuanced optimizations that even seasoned programmers tend to miss. The study of data structures and algorithms would help us spot such mistakes, and avoid them in the first place. </p>
+<h3 id="what-are-data-structures">What are Data Structures?<a class="headerlink" href="#what-are-data-structures" title="Permanent link">¶</a></h3>
+<p>Data structures are ways of organizing pieces of data.</p>
+<pre><code class="language-js">let a = 1;
+let b = 2;
+let c = 3;
+
+console.log(a+b+c); //outputs 6
+</code></pre>
+<pre><code class="language-js">const arr = [1,2,3]
+console.log(arr[0]+arr[1]+arr[2]); //outputs 6
+</code></pre>
+<p>In both cases, the result is the same. Which is the sum of the numbers 1, 2, and 3. However, when we execute the <code>console.log()</code> statement, the source of the data to be summed is different. In the first snippet we are retrieving the values 1, 2, 3 from memory, where each value is assigned to a separate variable a, b, c. In the second case, the values are <em>organized</em> in an array, all of them are stored in a single data structure, called an array. Instead of being stored separately, each in its unique variable.</p>
+<p>When building a piece of software, a web application for instance. How we choose to <em>organize</em> our data is of great significance. Because the way data is organized affects the storage and the retrieval of that data. Therefore, directly affecting the performance.</p>
+<p>If we take tiktok's feed for instance, those videos you are scrolling through have to be stored somewhere, how they are stored, displayed and organized would directly affect the experience of the millions of users who are requesting the data simultaneously while scrolling through the feed.</p>
+<p>To summarize:
+    Data structures are ways of organizing data in memory, knowing what data structure to choose for a given problem would directly affect the efficiency of manipulating the organized data, i.e. adding to it, searching it, retrieving from it, or removing it.</p>
+<h3 id="data-structure-operations">Data Structure Operations<a class="headerlink" href="#data-structure-operations" title="Permanent link">¶</a></h3>
+<ul>
+<li>Read: Answering the question, <strong>what value resides in a given location of the data structure?</strong></li>
+<li>Search: Answering the question, <strong>does the value exist in the data structure, if it does, what's the location of that value?</strong></li>
+<li>Insert: <strong>Adding a given value to a specific location in the data structure.</strong></li>
+<li>Delete <strong>Removing a particular value from the data structure, or removing the value in a given location.</strong></li>
+</ul>
+<h3 id="choosing-a-data-structure">Choosing a Data Structure<a class="headerlink" href="#choosing-a-data-structure" title="Permanent link">¶</a></h3>
+<p>Our choice of a data structure is critical, because the four main operations carried out on a data structure (Read, Search, Insert, Delete), the efficiency of these operations is affected by the data structure we are operating on.</p>
+<h4 id="speed-as-a-performance-metric">Speed as a performance metric<a class="headerlink" href="#speed-as-a-performance-metric" title="Permanent link">¶</a></h4>
+<p>"If you take away just one thing from this book, let it be this: when we measure
+how “fast” an operation takes, we do not refer to how fast the operation takes in terms of pure <em>time</em>, but instead in how many <em>steps</em> it takes."
+Jay Wngrow- A common sense guide to data structure and algorithms</p>
+<p>We've seen a demonstration of this in [[Why Data Structures Matter]], where <code>printArgs2</code> was faster because it took a fraction of the number of steps (iterations) taken in <code>printArgsV1</code>.</p>
+<p>Why do we measure speed of an operation ([[Time Complexity]])
+by the number of steps instead of the time it takes?
+Because, the time an operation takes is a function of the hardware the operation is running on. While, the number of steps of an operation is only dependent on the implementation of the operation, i.e. the piece of code which is what we're interested in.</p>
+<h3 id="the-array-data-structure">The Array Data Structure<a class="headerlink" href="#the-array-data-structure" title="Permanent link">¶</a></h3>
+<p>The first data structure we are going to discuss, is the simplest and the wildly used, the arrays.
+Arrays are contiguous space in memory, where the computer associates the address of the zeroth element of the array and its with the array's address.</p>
+<p>![[Pasted image 20220801185022.png]]</p>
+<p>As we've mentioned earlier, the importance of the choice of the data structure lies in the fact that it affects the efficiency of the four main operations. Before going through each of these operations with respect to the array data structure, here is a list of the operations and their efficiency.</p>
+<p>The cost of each operation on the array:</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Best Case</th>
+<th>Worst Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[[Read-Arrays]]</td>
+<td>1 step</td>
+<td>1 step</td>
+</tr>
+<tr>
+<td>[[Search-Arrays]]</td>
+<td>1 step</td>
+<td>N steps</td>
+</tr>
+<tr>
+<td>[[Insert-Arrays]]</td>
+<td>1 step</td>
+<td>N+1 steps</td>
+</tr>
+<tr>
+<td>[[Delete-Arrays]]</td>
+<td>1 step</td>
+<td>N steps</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-array-operations">The Array Operations<a class="headerlink" href="#the-array-operations" title="Permanent link">¶</a></h2>
+<h3 id="arrays-read-operation">Arrays Read Operation<a class="headerlink" href="#arrays-read-operation" title="Permanent link">¶</a></h3>
+<p>created on: 2022-08-01 14:28</p>
+<p>As we've mentioned in [[Speed as a Performance Measure]], we measure the speed of an operation by the number of steps it takes. 
+To read a variable from memory, it takes a single step,  which is a retrieval from memory step.
+If we take the [[array]] data structure. To read an element from an array, it also takes a single step, that's quite fast. And is attributed to the way the data is organized in an array.</p>
+<p>To understand this, let us see what happens when we define an array:</p>
+<pre><code class="language-js">let arr = ['a','b','c','d'];
+</code></pre>
+<p>when the array <code>arr</code> is defined, the computer has to store the data in memory, an array by definition in a contiguous space in memory, meaning, the values 'a', 'b', 'c', 'd' are going to be stored in sequential addresses in memory. 
+for example:
+value 'a' at memory location 005
+value 'b' at memory location 006
+value 'c' at memory location 007
+value 'd' at memory location 008</p>
+<pre><code class="language-js">let x = arr[0]
+let y = arr[3]
+</code></pre>
+<p>Each array stored in memory is associated with an address, the address of the element in the zeroth index, in our example, array <code>arr</code> would be associated with the address 005. Accessing any element other than the one stored at the zeroth element would be equivalent to accessing the element at the address: array's address + index we are trying to access. </p>
+<p>Consequently, the first line is equivalent to: go to the address 005 of the array <code>arr</code>, add 0 to the address (The index we're reading), read the value at the address 005 + 0, then assign it to the variable x. That's two steps, a read step, and an assignment step.</p>
+<p>Similarly, the second line is equivalent to: go to the address 005, add 3 to it (the index we're reading), read the value at the address 005+3, then assign it to the variable x. Also, two steps, a read step and an assignment step.</p>
+<p>Note that reading from an array costs exactly one step regardless of the location (index) we are interested in reading from. This is why arrays as a data structure are considered attractive, it's because it costs one step to read from any position in the array.</p>
+<h3 id="arrays-search">Arrays Search<a class="headerlink" href="#arrays-search" title="Permanent link">¶</a></h3>
+<p>Based on the definition of the search operation in [[Data Strcture Operations]], if we are looking for a particular value in an array, it means that we don't have the index of the value we are looking for, if we don't have the index, it means that we can't read it. Therefore, we need to look for the index where the value of interest resides. </p>
+<p>Assume there is a defined function <code>search</code>, that takes two arguments, an array and a value to look for within the array, and returns the index in which the value was found.</p>
+<pre><code class="language-js">arr = ['a','b','c','d'];
+
+locA = search(arr,'a'); 
+locC = search(arr,'c');
+</code></pre>
+<p>Executing the function <code>search(arr,'a')</code> based on the previous definition of the function would return the value 0, and <code>search(arr,'c')</code> would return the value 2. </p>
+<p>To find the index where the value is stored, the computer looks for the value started at the address of the array (which is at the zeroth index), if the value is found there it returns the index, otherwise it proceeds to the adjacent address (address + 1), until it traverses the full array.</p>
+<p>Therefore, if it finds the value at index 0, it takes it one step, if it finds it at index 3 it takes 4 steps, if the array is of size 1000 and the element is at index 999, it takes it 999 steps to find it. And if the array is of size n, and the value is at the last index of the array, then it takes the search n steps to find the value. This is known as linear search, it's one search algorithm, there are many others that are more efficient as we'll see later.  </p>
+<h3 id="arrays-insert">Arrays Insert<a class="headerlink" href="#arrays-insert" title="Permanent link">¶</a></h3>
+<p>Inserting data into an array is dependent on the position we are inserting the data in.</p>
+<ul>
+<li>Appending the data to the array takes one step.
+    ```js
+    let arr = ['a','b','c'];
+    arr.push('d');</li>
+</ul>
+<pre><code>
+pushing the value d to the array `arr` , is equivalent to telling the computer to go to the address of `arr` (which is the address of the zeroth element in the array), adding the size of the array to it, reaching the address where d is supposed to be added, i.e. at the end of the array. When an array is stored in memory, the computer keeps track of the array's size. [[The Array Data Structure]]
+
+- Inserting in a position other than the end of the array.
+If we want to insert the value "x" at index 2 of the array `['a','b','c']`, then we would need to shift c to index 2 for x to take its place, similarly if we want to insert x at index 1, we would need to shift both c and b to the right for x to be inserted. We notice that inserting at the first index of the array would result in the largest number of steps required for insertion. Namely, N + 1 steps, N shifting steps and 1 insertion step, where N is the size of the array.
+
+### Arrays Delete
+Deleting is very similar to the [[Insert-Arrays]] operation.
+
+- Deleting the final element takes exactly one step. 
+    Assume we have a function delete, that removes the value stored at the passed index. 
+
+    ```js
+    let arr = ['a','b','c'];
+    arr.delete(2);
+</code></pre>
+<p>the array would become <code>['a','b']</code>, however if we want to delete element b:</p>
+<pre><code class="language-js">let arr = ['a','b','c'];    
+arr.delete(1);
+</code></pre>
+<p>Thiss would result in removing the value b, then moving the value c from index 2 to index 1 to replace the location of the index that was occupied by b, this done to preserve the array as a data structure ofcontiguouss locations.Similarlyy if we want to delete the value at index 0, it would cost us a step for deletion, and two steps to shift b to index 0, and c to index 1. Consequently,in ann array of size N, deleting its zerothh element would cost us N steps.</p>
+<h2 id="the-set-data-structure">The Set Data Structure<a class="headerlink" href="#the-set-data-structure" title="Permanent link">¶</a></h2>
+<p>There are differentt types of sets, array-based sets in particular are identical to arrays with one additional constraints. The constraint being that it doesn't allow storing duplicates.</p>
+<p>This would have an implication on one of the operations, let's investigate the speed of each of the operations:
+1. Read: it takes one step to read a value at a given index, just like an array.
+2. Search: it takes the 1 step in the best case and N steps in the worst case to find an element in a set, just like arrays
+3. Insertion: To insert an element into the set, we have to make sure that the element doesn't already exist in the set. Therefore, an insertion operation consists of search (to look for that element), and insertion steps to insert it. i.e in the best case, it would take N+1 steps to insert an element at the end of the array (N steps for search and 1 for insertion), and in the worst case, which is inserting an element at the beginning of the array it would require N steps of search. And N steps of shifting the elements to the right to free up space at the zeroth index and 1 step to insert the new value. i.e. a total of 2N+1 steps.
+4. Deletion: it takes the same number of steps as arrays, one step for deletion and the number of elements to the right of the deleted element for shifting. If we're deleting the last element of the set, then we need only one step (to delete), if we are deleting the first element of an array of size N, then we need 1 step to delete the element and N-1 steps to shift the elements to the left, which is a total of N steps.</p>
+<p>To sum up:
+The cost of each operation in an array-based set:</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Best Case</th>
+<th>Worst Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read</td>
+<td>1 step</td>
+<td>1 step</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>1 step</td>
+<td>N steps</td>
+</tr>
+<tr>
+<td>Insert</td>
+<td>N+1</td>
+<td>2N+1 steps</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>1 step</td>
+<td>N steps</td>
+</tr>
+</tbody>
+</table>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Data Structure &amp; Algorithms Series" class="md-footer__link md-footer__link--prev" href="../0-Data%20Structure%20and%20Algorithms%20Objectives/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Data Structure &amp; Algorithms Series
+            </div>
+</div>
+</a>
+<a aria-label="Next: 2 Why Algorithms?" class="md-footer__link md-footer__link--next" href="../2-Why%20Algorithms%3F/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              2 Why Algorithms?
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+<script src="../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>

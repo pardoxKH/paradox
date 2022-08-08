@@ -1,0 +1,600 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.3.1, mkdocs-material-8.3.9" name="generator"/>
+<title>2 Why Algorithms? - obsidian-mkdocs template</title>
+<link href="../../assets/stylesheets/main.1d29e8d0.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="pink" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#why-algorithms">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="obsidian-mkdocs template" class="md-header__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            obsidian-mkdocs template
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              2 Why Algorithms?
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="pink" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="pink" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="obsidian-mkdocs template" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="obsidian-mkdocs template">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    obsidian-mkdocs template
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        Tariq Khasawneh
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2">
+          Data Structure &amp; Algorithms Project
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Data Structure &amp; Algorithms Project" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Data Structure &amp; Algorithms Project
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../0-Data%20Structure%20and%20Algorithms%20Objectives/">
+        Data Structure &amp; Algorithms Series
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1-Why%20Data%20Structures%3F/">
+        1 Why Data Structures?
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          2 Why Algorithms?
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        2 Why Algorithms?
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-algorithms">
+    Why Algorithms?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ordered-arrays-as-a-data-structure">
+    Ordered Arrays as a Data Structure
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ordered-arrays-search">
+    Ordered Arrays Search
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-search">
+    Binary Search
+  </a>
+<nav aria-label="Binary Search" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-search-vs-linear-search">
+    Binary Search vs Linear search
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ordered-arrays-insertion">
+    Ordered Arrays Insertion
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3-Big%20O%20Notation/">
+        3 Big O Notation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4-Bubble%20Sort/">
+        4 Bubble Sort
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5-Selection%20Sort/">
+        5 Selection Sort
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6-Insertion%20Sort/">
+        6 Insertion Sort
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3">
+          Features
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Features" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Features
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/LaTeX%20Math%20Support/">
+        LaTeX Math Support
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Features/Mermaid%20Diagrams/">
+        Mermaid diagrams
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#why-algorithms">
+    Why Algorithms?
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ordered-arrays-as-a-data-structure">
+    Ordered Arrays as a Data Structure
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ordered-arrays-search">
+    Ordered Arrays Search
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-search">
+    Binary Search
+  </a>
+<nav aria-label="Binary Search" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#binary-search-vs-linear-search">
+    Binary Search vs Linear search
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ordered-arrays-insertion">
+    Ordered Arrays Insertion
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>2 Why Algorithms?</h1>
+<h2 id="why-algorithms">Why Algorithms?<a class="headerlink" href="#why-algorithms" title="Permanent link">¶</a></h2>
+<p>An algorithm: a set of instructions to complete a specific task.</p>
+<p>We've seen the effect of choosing a data structure on the performance of our code, even similar data structures such as arrays and sets differ in behavior in an operation like insertion for example.</p>
+<p>Similarly, we will see that selecting a proper algorithm can have an effect on the efficiency of our code.  </p>
+<h2 id="ordered-arrays-as-a-data-structure">Ordered Arrays as a Data Structure<a class="headerlink" href="#ordered-arrays-as-a-data-structure" title="Permanent link">¶</a></h2>
+<p>Ordered arrays are arrays where the order of elements is preserved. This fact would have an implication on two main operations carried out on sorted arrays, mainly insertion and search.</p>
+<p>Similar to what we've done for arrays, and sets. To study a data structure, we need to investigate how the four main operations are affected by choosing such a data structure.</p>
+<h2 id="ordered-arrays-search">Ordered Arrays Search<a class="headerlink" href="#ordered-arrays-search" title="Permanent link">¶</a></h2>
+<p>A superpower of ordered arrays is search.</p>
+<p>If we take linear search as the searching algorithm of choice (that's what we have in our arsenal until now), and search for an element in an ordered array, it would have a drastically different performance compared to searching through a regular array.</p>
+<p>If we are searching for the element 10 in the following regular array:</p>
+<table>
+<thead>
+<tr>
+<th>9</th>
+<th>5</th>
+<th>7</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>We would have to traverse every element in the array to ensure 10 doesn't exist in the array. That's N steps.</p>
+<p>To search for element 10 in the ordered array:
+|9|12|20|25|
+|---|---|---|---|
+It would take us 2 steps to determine that 10 doesn't exist in the array. Because in the first step we find 9, in the second we find 12, but since it's an ordered array, all the values to the right of 12 would be &gt;= 12, but 10 &lt; 12. Therefore, there is no way we would find 10 to the right of 12, so we stop our search costing us N/2 steps, that's half the number of steps required for searching a regular array.</p>
+<p>Let's create a function that looks for an element in a given array.</p>
+<pre><code class="language-js">const linearSearch(arr, searchValue){
+    for(let i=0; i&lt; arr.length; i++){
+        if (arr[i] == searchValue){
+        return i;}
+    }
+    return null;
+}
+</code></pre>
+<p>The previous function searches linearly through a regular array.  It's not adapted to search through an ordered array. Adapting the function to search an ordered array implies that we need a condition that checks if the element we are comparing with is larger than <code>searchValue</code>, in that case we know that the element doesn't exist in the array, and we can exit the function. After modifying it, it looks something like this.</p>
+<pre><code class="language-js">function linearSearchV2(arr, searchValue){
+    for(let i=0; i&lt;arr.length; i++){
+        if (arr[i]==searchValue){
+        return i;}
+        else if (arr[i]&gt;searchValue){
+            //exit, because we don't to look further
+            return null;
+        }
+        return null;
+    }
+}
+</code></pre>
+<p>The previous function searches linearly through a regular array.  It's not adapted to search through an ordered array. Adapting the function to search an ordered array implies that we need a condition that checks if the element we are comparing with is larger than <code>searchValue</code>, in that case we know that the element doesn't exist in the array, and we can exit the function. After modifying it, it looks something like this.</p>
+<pre><code class="language-js">​￼function linearSearchV2(arr, searchValue){
+    ​￼for(let i=0; i&lt;arr.length; i++){
+        if (arr[i]==searchValue){
+        return i;}
+        ​￼else if (arr[i]&gt;searchValue){
+            //exit, because we don't to look further
+            return null;
+        }
+        return null;
+    }
+}
+</code></pre>
+<p>In conclusion, searching through an ordered array can take less steps than searching through a regular array. But if the element we are looking for happens to be the last element of the array, then searching through an ordered array would take N steps, the same number of steps it takes to search through a regular array.</p>
+<p>The big advantage and super power if ordered arrays is that they allow us to use a much faster searching algorithm to search through them. Namely, the [[Binary Search]] algorithm.</p>
+<h2 id="binary-search">Binary Search<a class="headerlink" href="#binary-search" title="Permanent link">¶</a></h2>
+<p>If I asked you to guess a number that I have in my mind, it's between 1 and 100, and I will reply to your guesses with higher or lower. What's the first number you'd pick as your guess. Well, intuitively you'd pick 50, because it's right in the middle. If I told you higher, you've eliminated all the numbers less than 50, and if I tell you lower, you have eliminated half the numbers below 50. Let's say I tell you the number is lower than 50, now the problem becomes that you have to guess a number between 1 and 50, half the search space. So your second guess would be....25, again based on my answer, I am going to either eliminate all the numbers between 25 and 50. Or all the numbers between 1 and 25. This process can go on until the number we guess the number correctly. And it's much more efficient than random guesses. Because as we've seen, we are halving the search space at each step.</p>
+<p>If I asked you to guess a number that I have in my mind, it's between 1 and 100, and I will reply to your guesses with higher or lower. What's the first number you'd pick as your guess. Well, intuitively you'd pick 50, because it's right in the middle. If I told you higher, you've eliminated all the numbers less than 50, and if I tell you lower, you have eliminated half the numbers below 50. Let's say I tell you the number is lower than 50, now the problem becomes that you have to guess a number between 1 and 50, half the search space. So your second guess would be....25, again based on my answer, I am going to either eliminate all the numbers between 25 and 50. Or all the numbers between 1 and 25. This process can go on until the number we guess the number correctly. And it's much more efficient than random guesses. Because as we've seen, we are halving the search space at each step.</p>
+<p>This same logic applies to ordered arrays, we are looking for the value 10 for example in the ordered array:
+|5|10|15|20|25|30|35|40|45|50|55|60|
+|---|---|---|---|---|---|---|---|---|---|---|---|</p>
+<p>We start by comparing with the element in the middle of the array:
+|5|10|15|20|25|30|35|40|45|50|55|60|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+||||||?|||||||</p>
+<p>Is 10 higher or lower than 30, lower. Therefore, we eliminate the upper half of the array. And we don't need to look through it.
+|5|10|15|20|25|30|35|40|45|50|55|60|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+||||||x|x|x|x|x|x|x|</p>
+<p>we are left with the elements 5, 10, 15, 20, 25 to look through, so once again we start with comparing with the element in the middle of those elements:
+|5|10|15|20|25|30|35|40|45|50|55|60|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+|||?|||x|x|x|x|x|x|x|</p>
+<p>Is 10 lower or higher than 15, it's lower. So, we eliminate the upper part of the subarray:
+|5|10|15|20|25|30|35|40|45|50|55|60|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+|||x|x|x|x|x|x|x|x|x|x|</p>
+<p>We do the same step again, comparing with the element in the middle of the subarray 5, 10. Since we have an even number of elements, we can choose arbitrarily either the element to the right or to the left of the middle, in our example, the index in the middle of 1, 2 is 0.5, then we can either take 0 or 1 to start comparing. If we take 0:
+|5|10|15|20|25|30|35|40|45|50|55|60|
+|---|---|---|---|---|---|---|---|---|---|---|---|
+|?||x|x|x|x|x|x|x|x|x|x|</p>
+<p>Is 10 lower or higher than 5, higher. Then, we eliminate 5, and we are left with one element, 10. 10 = 10 ? Yes, which is the value we are looking for.</p>
+<p>It took us 4 steps to find the element we are looking for in an array of size 10, an operation that would take N steps if it was a linear search, and we were looking for an element at the end of the array. While, in binary search, it would also take us 4 steps to look for an element at the end of the array. Try it out! </p>
+<p>Binary search in code:</p>
+<pre><code class="language-js">const binarySearch(arr, searchValue){
+    let lower = 0;
+    let upper = array.length - 1;
+
+    while(lower!&lt;= upper){
+        let mid = (lower+upper)/2;
+        if (searchValue == arr[mid]){
+            //the element is found
+            return mid; 
+        }
+        else if (searchValue &lt; mid){
+            //we need to look in the lower half
+            upper = mid - 1;
+
+
+        }
+        else{
+            //we need to look in the upper half
+            lower = mid +1; 
+        }}
+}
+</code></pre>
+<h3 id="binary-search-vs-linear-search">Binary Search vs Linear search<a class="headerlink" href="#binary-search-vs-linear-search" title="Permanent link">¶</a></h3>
+<p>The real difference in performance between binary search and linear search is significant for large arrays, with an array containing 100 values, the maximum number of steps required to look for a value is:
+    - Linear Search: 100 steps
+    - Binary Search: 7 steps</p>
+<p>If we double the size of the array:
+    - linear search would require additional steps equal to the number of added values to search for a value.
+    - binary search would require one additional step to search for a required value.</p>
+<p>The difference between the performance of the two becomes more drastic as the size of the array increases.
+![[Pasted image 20220803150647.png]]</p>
+<p>Reminder: </p>
+<p>Ordered Arrays aren't faster with respect to all operations, insertion for example in ordered array is slower than regular arrays. Therefore, by using an ordered array, we get a somewhat slower insertion, but a much faster search.</p>
+<p>Upgraded insertion: since we have binary search in our toolkit now, and since insertion into ordered arrays requires search before inserting an element, we can upgrade the search to binary search. However, insertion into regular arrays is still faster as they don't require search at all.</p>
+<h2 id="ordered-arrays-insertion">Ordered Arrays Insertion<a class="headerlink" href="#ordered-arrays-insertion" title="Permanent link">¶</a></h2>
+<ul>
+<li>Insertion:</li>
+</ul>
+<p>if we need to insert the value 6 into the following sorted array:</p>
+<table>
+<thead>
+<tr>
+<th>4</th>
+<th>5</th>
+<th>7</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>We can't directly append to the array as in the regular arrays case, because the ordering has to be preserved after the insertion, because it's an <strong>ordered</strong> array. Therefore, we would have to look for the proper location where the value 6 is going to be inserted.</p>
+<table>
+<thead>
+<tr>
+<th>4</th>
+<th>5</th>
+<th>7</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>X</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>We first do the comparison: 6&gt;4? 
+6 is larger than 4, so 6 has to be placed to the right of 4</p>
+<table>
+<thead>
+<tr>
+<th>4</th>
+<th>5</th>
+<th>7</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>X</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Then, we do the second comparison: 6&gt;5?
+6 is larger than 5, so 6 has to be placed to the right of 5</p>
+<p>The third comparison would be with the 7:
+|4|5|7|9|
+|---|---|---|---|
+|||X||</p>
+<p>6 is less than 7, therefore, it would have to be inserted to the left of 7. </p>
+<p>To insert it to the left of 7, the 9 has to be shifted to the right (that's one step), and the 7 has to replace the 9 (that's two steps).</p>
+<p>Finally, after 5 steps, we reach the following state:</p>
+<table>
+<thead>
+<tr>
+<th>4</th>
+<th>5</th>
+<th></th>
+<th>7</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Now, the location where 6 should be inserted is unoccupied, and it can be inserted (an additional step).</p>
+<table>
+<thead>
+<tr>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>So it took us 6 steps to insert in a 4 element sorted array. Which is N+2 steps. In this case, they were N/2 + 1steps of comparison, N/2  steps for shifting, and 1 insertion step.</p>
+<p>It turns out that the location where the element is going to be inserted doesn't affect the number of steps required, it just changes the distribution of the number of steps, between the steps required for shifting, and the steps required for comparison.</p>
+<p>For example, if we are inserting at the end of the sorted array, we would need N comparison steps, 0 shifts, and 1 insertion step, N+1 steps. If we are inserting at the beginning of sorted array, it would require us one comparison, N shifts, and 1 insertion.</p>
+<p>In conclusion, the insertion in sorted arrays takes N+1 steps in the best case, and N+2 steps in the worst case.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: 1 Why Data Structures?" class="md-footer__link md-footer__link--prev" href="../1-Why%20Data%20Structures%3F/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              1 Why Data Structures?
+            </div>
+</div>
+</a>
+<a aria-label="Next: 3 Big O Notation" class="md-footer__link md-footer__link--next" href="../3-Big%20O%20Notation/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              3 Big O Notation
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+<script src="../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>
